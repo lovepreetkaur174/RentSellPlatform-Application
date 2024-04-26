@@ -6,17 +6,20 @@ import {toast} from 'react-toastify'
 import {db} from './../firebase'
 import {useNavigate} from 'react-router-dom'
 export default function OAuth() {
-  const navigate=useNavigate();
+  const navigate=useNavigate(); // intialize  hook
   async function onGoogleClick(){
     try {
       const auth=getAuth()
       const provider=new GoogleAuthProvider()
+      // firstly signed up the person with popup
       const result =await signInWithPopup(auth,provider)
+      // we got user as promise returned from result
       const user =result.user
+
       // adding user to database
       // check if user already exist
-      const docRef=doc(db,"users",user.uid);
-      const docSnap=await getDoc(docRef)
+      const docRef=doc(db,"users",user.uid); // ref to user 
+      const docSnap=await getDoc(docRef)  // checking if it exist
       if(!docSnap.exists)
       {
         // if user not exist we will add to database
@@ -26,6 +29,7 @@ export default function OAuth() {
           timestamp:serverTimestamp(),
         });
       }
+      // after adding user we are navigating back to home page..
       navigate('/');
       
     } catch (error) {
