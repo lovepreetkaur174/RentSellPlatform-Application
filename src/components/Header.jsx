@@ -25,7 +25,7 @@ export default function Header() {
         }
     }
   return (
-    <div className='bg-white border-b shadow-sm  sticky top-0 z-50'>
+    <div className='bg-white border-b shadow-sm  sticky top-0 z-40'>
       <header className='flex justify-between items-center px-3 max-w-6xl
        mx-auto'>
         <div >
@@ -38,7 +38,7 @@ export default function Header() {
               className={`cursor-pointer py-3 text-m font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMatchRoute("/") && "text-black border-b-red-500"
               }`}
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/")} 
             >
               Home
             </li>
