@@ -8,7 +8,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { getAuth } from "firebase/auth";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";  // uuid for creating 
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
@@ -161,7 +161,7 @@ export default function CreateListing() {
       imgUrls,
       geolocation,
       timestamp: serverTimestamp(), // to know time when the user submitted the form
-      userRef: auth.currentUser.uid,
+      userRef: auth.currentUser.uid, // to keep a track of person created this
     };
      delete formDataCopy.images;  // deleting the images
      !formDataCopy.offer && delete formDataCopy.discountedPrice;  // if no offer then we want to delete the discounted price

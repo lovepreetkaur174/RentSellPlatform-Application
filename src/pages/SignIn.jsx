@@ -50,7 +50,7 @@ export default function SignIn() {
                <input className='w-full px-4 py-2
                text-xl text-gray-700 bg-white
                border-gray-300 rounded transition ease-in-out mb-6' type='email' id='email' value={email}
-               onChange={onchange}
+               onChange={onChange}
                placeholder='Email Address'
                />
                <div className='relative'>
@@ -58,7 +58,7 @@ export default function SignIn() {
                text-xl text-gray-700 bg-white
                border-gray-300 rounded transition ease-in-out mb-6'
                 type={showPassword ? 'text' : 'password'} id='password' value={password}
-               onChange={onchange}
+               onChange={onChange}
                placeholder='Password'
                />
                {showPassword ? <FaEyeSlash className='absolute  right-3 top-3 text-xl cursor-pointer'
