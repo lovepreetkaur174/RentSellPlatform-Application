@@ -17,7 +17,7 @@ const GoogleMapComponent = (props) => {
     if (props.address) {
       const fetchData = async () => {
         console.log("geocodedLocation1", props.address);
-        const geocodedLocation = await geocodeAddress("E195 phase 8b mohali");
+        const geocodedLocation = await geocodeAddress(props.address);
         console.log("geocodedLocation", geocodedLocation);
         setAllData(geocodedLocation);
       };
