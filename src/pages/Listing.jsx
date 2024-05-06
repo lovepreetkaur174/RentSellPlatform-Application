@@ -245,9 +245,8 @@ export default function Listing() {
               <Popup>{listing.address}</Popup>
             </Marker>
           </MapContainer> */}
-      
-          
-            <GoogleMapComponent address={address} />
+
+          <GoogleMapComponent address={address} />
         </div>
       </div>
     </main>
